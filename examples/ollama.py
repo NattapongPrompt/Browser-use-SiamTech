@@ -15,13 +15,13 @@ async def run_search() -> str:
     agent = Agent(
         task="Search for a 'browser use' post on the r/LocalLLaMA subreddit and open it.",
         llm=ChatOllama(
-            model="qwen2.5:32b-instruct-q4_K_M",
+            model="llama3.2-vision:11b",
             num_ctx=32000,
         ),
     )
 
     result = await agent.run()
-    return result
+    return str(result)
 
 
 async def main():
